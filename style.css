@@ -1,0 +1,302 @@
+/* General selectors */
+* {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;}
+
+html {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    margin: 0px;
+
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+
+    font-size: calc(15px + 0.390625vw);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.flex_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    margin-left: 2em;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 2px solid blue;
+    border-radius: 4px;
+    padding: 2px;
+    text-align: center;
+}
+
+.button.selected {
+    background-color: blue;
+}
+
+
+.buttonlarge {
+    border: 2px solid blue;
+    border-radius: 2px;
+    margin-left: 2em;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: red;
+}
+
+
+p{
+    font-size: 0.8rem;
+    color: red;
+}
+
+h2{
+    color: silver;
+}
+
+h3{
+    color: silver;
+}
+
+
+/* Specific selectors */
+
+/* Title */
+.title{
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bolder;
+    color: black;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid black;
+}
+
+/* Menu */
+.navigation {
+    height: 10vh;
+    width: 100%;
+    border-bottom: 2px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_buttons {
+    display: flex;
+    align-items: center;
+}
+
+
+a{
+    color: red;
+}
+
+
+a:hover{
+    color: silver;
+}
+
+.logo{
+    height: 9vh;
+}
+/* Content */
+
+article {
+    background-color: white;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 1.25em;
+    flex-direction: column;
+}
+
+aside {
+    background-color: white;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 1.25em;
+}
+
+.kep30 {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%; 
+}
+
+.content {
+    display: flex;
+    flex-basis: 70%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.left {
+    flex: 60%;
+    display: flex; 
+    flex-direction: column;
+}
+
+.right {
+    flex: 35%;
+    margin-left: 5%;
+    display: flex; 
+    flex-direction: column;
+}
+
+
+.callout{
+    background-color: white;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 1.25em;
+    flex-basis: 70%;
+    text-align: center;
+}
+.galleria {
+    margin: auto; 
+    width: 90vw; 
+    height: 40vw;
+    margin-top: 10vh;
+    justify-content: center;
+}
+
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 0 auto; 
+}
+
+label {
+    margin-bottom: 0.3125em;
+}
+
+input {
+    padding: 0.5em;
+    margin-bottom: 0.625em;
+}
+
+input[type="submit"] {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: darkblue;
+}
+
+label.error {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+
+input.valid {
+    border: 1px solid green;
+}
+
+
+
+
+/* Footer */
+.footer{
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    border-top: 2px solid black;
+    background-color: white;
+    width: 100%;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+    .flex_container {
+        font-size: calc(15px + 0.3125vw);
+    }
+
+    .button {
+        margin-left: 1em;
+    }
+
+    .buttonlarge {
+        margin-left: 1em;
+    }
+
+    .left,
+    .right {
+        flex: 48%;
+        margin-left: 2%;
+    }
+
+    form {
+        max-width: 48%; 
+    }
+}
+
+/* Mobilra */
+@media screen and (max-width: 480px) {
+
+    .flex_container {
+        font-size: calc(15px + 0.234375vw);
+        
+    }
+
+    .button,
+    .buttonlarge {
+        margin-left: 0;
+    }
+
+    .nav_buttons{
+        font-size: 10px;
+        margin: 5px;
+    }
+
+    .logo{
+        width: 50px;
+    }
+
+    h2{
+        font-size: 0.6em;
+    }
+    p{
+        font-size: 0.6em;
+    }
+    h3{
+        font-size: 0.6em;
+    }
+
+    .left,
+    .right {
+        flex: 100%; 
+        margin-left: 0; 
+    }
+
+    form {
+        max-width: 100%; 
+    }
+
+}

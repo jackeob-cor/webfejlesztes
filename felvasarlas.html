@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jakab Boldizsár">
+    <meta name="copyright" content="Csak oktatási célokra">
+    <meta name="description" content="A weblapon ismerettejesztő célú, egy ikonikus autómodellről szól. Megtalálható benne egy galéria, illetve a tudás felmérését szólgáló űrlap is.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMW M1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <script src="scripts/script.js"></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+    <script src="scripts/jquery-3.7.1.js"></script>
+    <script src="scripts/jquery-validation-1/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myform").validate({
+                rules: {
+                    fullName: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: "required",
+                    carModel: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 3
+                    },
+                    manufacturingDate: "required",
+                    color: "required",
+                    km: {
+                        required: true,
+                        number: true
+                    },
+                    askingPrice: "required"
+                },
+                messages: {
+                    fullName: "Írd be a teljes neved!",
+                    email: {
+                        required: "Kérlek add meg az email címed!",
+                        email: "Kérlek adj meg valós email címet!"
+                    },
+                    phone: "Kérlek add meg a telefonszámod!",
+                    carModel: {
+                        required: "Kérlek add meg az autó modelljét!",
+                        minlength: "Az autó modelljének 3 karakter hosszúnak kell lennie!",
+                        maxlength: "Az autó modelljének 3 karakter hosszúnak kell lennie!"
+                    },
+                    manufacturingDate: "Kérlek add meg a gyártási dátumot!",
+                    color: "Kérlek válassz egy autó színt!",
+                    km: {
+                        required: "Kérlek add meg a kilométeróra állását!",
+                        number: "Csak számokat adj meg a kilométeróra állásánál!"
+                    },
+                    askingPrice: "Kérlek add meg az irányárat!"
+                }
+            });
+        });
+    </script>
+</head>
+<body class="flex_container">
+    <header class="flex_container title">
+        5-ös BMW felvásárlás
+    </header>
+
+    <nav class="flex_container navigation">
+        <div class="flex_container nav_buttons">
+            <a href="main.html" class="button">Főoldal</a>
+            <a href="motorsport.html" class="button">Motorsport</a>
+            <a href="galeria.html" class="button">Galéria</a>
+            <a href="#" class="button selected">Felvásárlás</a>
+        </div>
+        <div>
+            <img src="images/mlogo.webp" alt="M-Power logo" class="logo">
+        </div>
+    </nav>
+
+    <div class="flex_container content">
+        <div class="flex_container left">
+
+            <article class="flex_container">
+
+                <h4>
+                    Érdekli mennyibe kerülne az 5-ös BMW-je fenntartása?
+                </h4>
+
+                <label for="evjarat">Gyártási év:</label>
+                <input type="number" id="evjarat"><br>
+
+                <label for="km">Kilóméteróra állása:</label>
+                    <select name="Kilóméteróra állása" id="km">
+                    <option value="100">0-100 ezer km</option>
+                    <option value="200">100-200 ezer km</option>
+                    <option value="300">200-300 ezer km</option>
+                    <option value="400">300-400 ezer km</option>
+                    <option value="500">400+ ezer km</option>
+                </select>
+                <br>
+                <label for="model">Modellkód:</label>
+                    <select name="Kilóméteróra állása" id="model">
+                    <option value="E12">E12</option>
+                    <option value="E28">E28</option>
+                    <option value="E34">E34</option>
+                    <option value="E39">E39</option>
+                    <option value="E60">E60</option>
+                    <option value="E61">E61</option>
+                    <option value="F07">F07</option>
+                    <option value="F10">F10</option>
+                    <option value="F11">F11</option>
+                    <option value="F90">F90</option>
+                    <option value="G30">G30</option>
+                    <option value="G31">G31</option>
+                </select>
+
+                <h4>Szereti az autóját?</h4>
+
+                <label for="igen">Igen</label>
+                <input type="radio" id="igen" name="care" value="yes"> 
+
+                <label for="nem">Nem</label>
+                <input type="radio" id = "nem" name="care" value="no">
+
+                <input class="button" type="button" value="Számold ki!" onclick="fenntartas()">
+
+                <label for="eredmeny">Éves becsült fenntartási költség (ezer Ft):</label>
+                <input id="eredmeny" type="text" name="megoldas" value="">
+            </article>
+        </div>
+        <div class="flex_container right">
+
+            <article class="flex_container">
+
+                <h4>Úgy döntött túl drága lenne? Vegye fel velünk a kapcsolatot!</h4>
+
+                <form action="http://szamtud.uni-corvinus.hu/receive.php" method="post" id="myform" novalidate>
+
+                    <label for="fullName">Teljes név:</label>
+                    <input type="text" id="fullName" name="fullName">
+
+                    <label for="email">Email cim:</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="phone">Telefonszám:</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <label for="carModel">Modell:</label>
+                    <input type="text" id="carModel" name="carModel">
+
+                    <label for="manufacturingDate">Gyártási Dátum:</label>
+                    <input type="date" id="manufacturingDate" name="manufacturingDate">
+
+                    <label for="color">Autó Színe:</label>
+                    <input type="color" id="color" name="color">
+
+                    <label for="km">Kilométeróra állása:</label>
+                    <input type="number" id="km" name="km">
+
+                    <label for="askingPrice">Irányár (Ft):</label>
+                    <input type="text" id="askingPrice" name="askingPrice">
+
+                    <button type="submit" class="button">Küldés!</button>
+
+                </form>
+            </article>
+        </div>
+    </div>
+
+    <footer class="flex_container footer">
+        <p>Jakab Boldizsár, 2023 Kizárólag oktatási célokra</p>
+    </footer>
+
+</body>
+</html>

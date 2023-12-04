@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jakab Boldizsár">
+    <meta name="copyright" content="Csak oktatási célokra">
+    <meta name="description" content="A weblapon ismerettejesztő célú, egy ikonikus autómodellről szól. Megtalálható benne egy galéria, illetve a tudás felmérését szólgáló űrlap is.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="scripts/jquery-3.7.1.js"></script>
+    <script src="scripts/galleria-1.6.1/dist/galleria.min.js"></script>
+    <script src="scripts/galleria-1.6.1/src/themes/classic/galleria.classic.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('#images').galleria({width : 900, height : 500});
+        });
+    </script>
+
+    <title>BMW M1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body class="flex_container">
+    <header class="flex_container title">
+        További képek galériája
+    </header>
+
+    <nav class="flex_container navigation">
+
+        <div class="flex_container nav_buttons">
+            <a href="main.html" class="button">Főoldal</a>
+            <a href="motorsport.html" class="button">Motorsport</a>
+            <a href="#" class="button selected">Galéria</a>
+            <a href="felvasarlas.html" class="button">Felvásárlás</a>
+        </div>
+        <div>
+            <img src="images/mlogo.webp" alt="M-Power logo" class="logo">
+        </div>
+    </nav>
+
+    <div id="images" class="galleria flex_container content">
+        <img src="images/motor.jpeg" alt="Kép az autó motorteréről">
+        <img src="images/motor2.jpeg" alt="Kép az autó motorjáról">
+        <img src="images/felfuggesztes.jpeg" alt="Kép az autó felfüggesztéséről">
+        <img src="images/belso.jpeg" alt="Kép az autó belteréről">
+        <img src="images/piros1.jpeg" alt="Kép az autó hátuljáról (piros változat)">
+        <img src="images/gyartas.jpeg" alt="Kép az autó egy gyártási állomásáról">
+        <img src="images/procar.jpeg" alt="Kép az autó egy sport változatáról">
+        <img src="images/procar2.avif" alt="Kép az autó egy sport változatáról">
+    </div>
+    <section class="callout">
+        <a href="felvasarlas.html" class="buttonlarge">BMW-je eladásán gondolkodik? Segítünk!</a>
+    </section>
+    
+    
+    <footer class="flex_container footer">
+        <p>Jakab Boldizsár, 2023 Kizárólag oktatási célokra</p>
+    </footer>
+</body>
+</html>

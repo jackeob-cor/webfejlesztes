@@ -1,0 +1,9 @@
+Az oldal készitője: Jakab Boldizsár
+Az oldal elérhetősége: https://github.com/jackeob-cor/webfejlesztes
+
+Leirás: A weblapon ismerettejesztő célú, egy ikonikus autómodellről szól. Megtalálható benne egy galéria, illetve a tudás felmérését szólgáló űrlap is.
+
+JavaScript kódom: a "Felvásárlás" oldalon található, az első űrlapra bevitt adatok alapján megnézi, hogy azok helyesek-e, illetve egy fenntartási költség becslését végzi
+
+Font tipus: az egész oldalon a Roboto google fontot használom
+
